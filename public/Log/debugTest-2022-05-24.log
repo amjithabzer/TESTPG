@@ -1,0 +1,80 @@
+[2022-05-24T05:30:50] [INFO] [MerchantConfiguration] : APPLICATION LOGGING START:
+
+[2022-05-24T05:30:50] [INFO] [MerchantConfiguration] : CONFIGURATION INFORMATION :
+authenticationType  = HTTP_SIGNATURE
+enableLogging  = 1
+debugLogFile  = /var/www/html/TestPG/public/Resources/../Log/debugTest.log
+errorLogFile  = /var/www/html/TestPG/public/Resources/../Log/errorTest.log
+RunEnvironment  = apitest.cybersource.com
+[2022-05-24T05:30:50] [INFO] [PayerAuthenticationApi] : CALL TO METHOD payerAuthSetup STARTED
+[2022-05-24T05:30:50] [DEBUG] [PayerAuthenticationApi] : Resource : POST /risk/v1/authentication-setups
+[2022-05-24T05:30:50] [DEBUG] [PayerAuthenticationApi] : Body Parameter :
+{"clientReferenceInformation":{"code":"AMJ20220524053049","partner":{"developerId":"7891234","solutionId":"89012345"}},"paymentInformation":{"card":{"type":"xxxxx","expirationMonth":"xxxx","expirationYear":"xxxx","number":"xxxxx1111"}}}
+[2022-05-24T05:30:50] [DEBUG] [PayerAuthenticationApi] : Return Type : \CyberSource\Model\RiskV1AuthenticationSetupsPost201Response
+[2022-05-24T05:30:50] [INFO] [ApiClient] : CALLING API "/risk/v1/authentication-setups" STARTED
+[2022-05-24T05:30:50] [DEBUG] [ApiClient] : Request Headers :
+Accept: application/hal+json;charset=utf-8
+Content-Type: application/json
+v-c-merchant-id:ni_network_aed
+Signature:keyid="XXXXX", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="iow/DIaZQJGxCXX4m/lVY5u6tb3MGC6QcWuB52aHPhc="
+Host:apitest.cybersource.com
+Date:Tue, 24 May 2022 5:30:50 GMT
+v-c-client-id:
+Digest: SHA-256=07im33mJwCi42zZ3P6Ah0i05zYtjZsU9V6T2El7+SG8=
+[2022-05-24T05:30:50] [DEBUG] [ApiClient] : HTTP Request Body:
+{"clientReferenceInformation":{"code":"AMJ20220524053049","partner":{"developerId":"7891234","solutionId":"89012345"}},"paymentInformation":{"card":{"type":"xxxxx","expirationMonth":"xxxx","expirationYear":"xxxx","number":"xxxxx1111"}}}
+[2022-05-24T05:30:51] [DEBUG] [ApiClient] : HTTP Response Body:
+{"clientReferenceInformation":{"code":"AMJ20220524053049","partner":{"developerId":"7891234","solutionId":"89012345"}},"consumerAuthenticationInformation":{"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5NzllMzdkMy00ODJlLTRmZmUtOGUzNS1iZDRhZmMyMTU5ZmMiLCJpYXQiOjE2NTMzNzAzMzIsImlzcyI6IjVkZDgzYmYwMGU0MjNkMTQ5OGRjYmFjYSIsImV4cCI6MTY1MzM3MzkzMiwiT3JnVW5pdElkIjoiNTkyNTc2MGE4Y2IyYzEyOTk0MmIwZjliIiwiUmVmZXJlbmNlSWQiOiJlMjg2MzYzMy1kZTNjLTQwMjctODMzMi04ZDY0MDU2OTM3YjEifQ.H8Kcua8Me4QUTnPuT2iOul4Ap1TpDtK4nSLQDAiqIpA","deviceDataCollectionUrl":"https:\/\/centinelapistag.cardinalcommerce.com\/V1\/Cruise\/Collect","referenceId":"e2863633-de3c-4027-8332-8d64056937b1","token":"xxxxx"},"id":"6533703318316476703005","status":"COMPLETED","submitTimeUtc":"2022-05-24T05:32:12Z"}
+[2022-05-24T05:30:51] [DEBUG] [PayerAuthenticationApi] : Response Headers :
+HTTP/1.1 201 Created
+Cache-Control = no-cache, no-store, must-revalidate
+Pragma = no-cache
+Expires = -1
+Strict-Transport-Security = max-age=31536000
+Content-Type = application/hal+json
+Content-Length = 830
+x-response-time = 290ms
+Connection = keep-alive
+v-c-correlation-id = a5609d9c-fa81-4649-8120-876a53e577db
+X-OPNET-Transaction-Trace = 5d4d79bb-fb9d-4ccf-b13c-035045f4fd58
+[2022-05-24T05:30:52] [INFO] [PayerAuthenticationApi] : CALL TO METHOD payerAuthSetup ENDED
+[2022-05-24T05:33:01] [INFO] [MerchantConfiguration] : APPLICATION LOGGING START:
+
+[2022-05-24T05:33:01] [INFO] [MerchantConfiguration] : CONFIGURATION INFORMATION :
+authenticationType  = HTTP_SIGNATURE
+enableLogging  = 1
+debugLogFile  = /var/www/html/TestPG/public/Resources/../Log/debugTest.log
+errorLogFile  = /var/www/html/TestPG/public/Resources/../Log/errorTest.log
+RunEnvironment  = apitest.cybersource.com
+[2022-05-24T05:33:01] [INFO] [PayerAuthenticationApi] : CALL TO METHOD checkPayerAuthEnrollment STARTED
+[2022-05-24T05:33:01] [DEBUG] [PayerAuthenticationApi] : Resource : POST /risk/v1/authentications
+[2022-05-24T05:33:01] [DEBUG] [PayerAuthenticationApi] : Body Parameter :
+{"clientReferenceInformation":{"code":"AMJ20220524053049","partner":{"developerId":"7891234","solutionId":"89012345"}},"orderInformation":{"amountDetails":{"currency":"AED","totalAmount":"100"},"billTo":{"address1":"1 Market St","address2":"Address 2","administrativeArea":"CA","country":"US","locality":"san francisco","firstName":"xxxxx","lastName":"xxxxx","phoneNumber":"xxxxx","email":"xxxxx","postalCode":"94105"}},"paymentInformation":{"card":{"type":"xxxxx","expirationMonth":"xxxx","expirationYear":"xxxx","number":"xxxxx1111"}},"consumerAuthenticationInformation":{"referenceId":"e2863633-de3c-4027-8332-8d64056937b1","transactionMode":"MOTO"}}
+[2022-05-24T05:33:01] [DEBUG] [PayerAuthenticationApi] : Return Type : \CyberSource\Model\RiskV1AuthenticationsPost201Response
+[2022-05-24T05:33:01] [INFO] [ApiClient] : CALLING API "/risk/v1/authentications" STARTED
+[2022-05-24T05:33:01] [DEBUG] [ApiClient] : Request Headers :
+Accept: application/hal+json;charset=utf-8
+Content-Type: application/json
+v-c-merchant-id:ni_network_aed
+Signature:keyid="XXXXX", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="hKYDkAUNofdOTnzq0XHIZ32pBB2bLdIgDE/VAXz60mo="
+Host:apitest.cybersource.com
+Date:Tue, 24 May 2022 5:33:01 GMT
+v-c-client-id:
+Digest: SHA-256=cqwCm24JaRpSycHCrpRAzzmqYcZxp05ZHuYGEW1TF0o=
+[2022-05-24T05:33:01] [DEBUG] [ApiClient] : HTTP Request Body:
+{"clientReferenceInformation":{"code":"AMJ20220524053049","partner":{"developerId":"7891234","solutionId":"89012345"}},"orderInformation":{"amountDetails":{"currency":"AED","totalAmount":"100"},"billTo":{"address1":"1 Market St","address2":"Address 2","administrativeArea":"CA","country":"US","locality":"san francisco","firstName":"xxxxx","lastName":"xxxxx","phoneNumber":"xxxxx","email":"xxxxx","postalCode":"94105"}},"paymentInformation":{"card":{"type":"xxxxx","expirationMonth":"xxxx","expirationYear":"xxxx","number":"xxxxx1111"}},"consumerAuthenticationInformation":{"referenceId":"e2863633-de3c-4027-8332-8d64056937b1","transactionMode":"MOTO"}}
+[2022-05-24T05:33:03] [DEBUG] [ApiClient] : HTTP Response Body:
+{"clientReferenceInformation":{"code":"AMJ20220524053049","partner":{"developerId":"7891234","solutionId":"89012345"}},"consumerAuthenticationInformation":{"authenticationTransactionId":"cFMx09pHtTBwFs74fqS0","veresEnrolled":"N","authenticationPath":"NOREDIRECT","eci":"07","ecommerceIndicator":"vbv_attempted","proofXml":"<AuthProof><Time>2022 May 24 05:34:22<\/Time><DSUrl>https:\/\/merchantacsstag.cardinalcommerce.com\/MerchantACSWeb\/vereq.jsp?acqid=CYBS<\/DSUrl><VEReqProof><Message id=\"cFMx09pHtTBwFs74fqS0\"><VEReq><version>1.0.2<\/version><pan>XXXXXXXXXXXX1111<\/pan><Merchant><acqBIN>469216<\/acqBIN><merID>341422420000000<\/merID><\/Merchant><Browser><deviceCategory>0<\/deviceCategory><\/Browser><\/VEReq><\/Message><\/VEReqProof><VEResProof><Message id=\"cFMx09pHtTBwFs74fqS0\"><VERes><version>1.0.2<\/version><CH><enrolled>N<\/enrolled><\/CH><protocol>ThreeDSecure<\/protocol><\/VERes><\/Message><\/VEResProof><\/AuthProof>","specificationVersion":"1.0.2","token":"xxxxx"},"id":"6533704628846199803003","paymentInformation":{"card":{"bin":"411111","type":"xxxxx"}},"status":"AUTHENTICATION_SUCCESSFUL","submitTimeUtc":"2022-05-24T05:34:23Z"}
+[2022-05-24T05:33:03] [DEBUG] [PayerAuthenticationApi] : Response Headers :
+HTTP/1.1 201 Created
+Cache-Control = no-cache, no-store, must-revalidate
+Pragma = no-cache
+Expires = -1
+Strict-Transport-Security = max-age=31536000
+Content-Type = application/hal+json
+Content-Length = 1186
+x-response-time = 482ms
+Connection = keep-alive
+v-c-correlation-id = 3a52e18a-f302-4aa6-b80c-531fc9a8750b
+X-OPNET-Transaction-Trace = 48288489-c642-4e9f-9876-41e36440434c
+[2022-05-24T05:33:03] [INFO] [PayerAuthenticationApi] : CALL TO METHOD checkPayerAuthEnrollment ENDED
