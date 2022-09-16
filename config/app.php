@@ -57,7 +57,7 @@ return [
     'url' => env('APP_URL', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL'),
-    'MPGS_marchant_id' => 'TEST120800000022',
+    'MPGS_marchant_id' => '200190700101',
     /*
     |--------------------------------------------------------------------------
     | Application Timezone

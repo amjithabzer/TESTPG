@@ -17,7 +17,7 @@ class MPGSController extends Controller
                 'Authorization' => 'Basic ' . Helper::CreateApiToken(),
             ]
         ]);
-        $this->baseUrl = 'https://test-adcb.mtf.gateway.mastercard.com/api/rest/version/63/merchant/'.config('app.MPGS_marchant_id');
+        $this->baseUrl = 'https://test-network.mtf.gateway.mastercard.com/api/rest/version/63/merchant/'.config('app.MPGS_marchant_id');
 
     }
     public static function CreateApiToken()
@@ -71,6 +71,7 @@ class MPGSController extends Controller
             $requestObj = json_decode(str_replace(' ','',$content));
             $session_id = $requestObj->session->id;
             $dataArray = array(
+                'response' => $responseObj,
                 'transaction_id' => $TransactionId,
                 'order_id' => $OrderId,
                 'session_id' => $session_id,
@@ -90,11 +91,12 @@ class MPGSController extends Controller
             'body' => str_replace(' ','',$content)
         ]);
         $responseObj = json_decode($res1->getBody()->getContents());
-        //dd($responseObj);
+
         $responseHtml = $responseObj->authentication->redirectHtml;
         $requestObj = json_decode(str_replace(' ','',$content));
         $session_id = $requestObj->session->id;
         $dataArray = array(
+            'response' => $responseObj,
             'transaction_id' => $TransactionId,
             'order_id' => $OrderId,
             'url' => url('mpgs/payment/')."/".base64_encode($responseHtml),
@@ -131,11 +133,11 @@ class MPGSController extends Controller
               array (
                 'card' =>
                 array (
-                  'number' => '5123450000000008',
+                  'number' => '4508750015741019',
                   'expiry' =>
                   array (
-                    'month' => '05',
-                    'year' => '30',
+                    'month' => '01',
+                    'year' => '39',
                   ),
                 ),
               ),

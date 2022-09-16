@@ -5508,3 +5508,52 @@ Content-Length: 666
 < v-c-correlation-id: 658e9e79-74e1-4772-b863-7d740a7f224d
 < 
 * Connection #0 to host apitest.cybersource.com left intact
+*   Trying 66.185.182.49:443...
+* TCP_NODELAY set
+*   Trying 64:ff9b::42b9:b631:443...
+* TCP_NODELAY set
+* Immediate connect fail for 64:ff9b::42b9:b631: Network is unreachable
+*   Trying 64:ff9b::42b9:b631:443...
+* TCP_NODELAY set
+* Immediate connect fail for 64:ff9b::42b9:b631: Network is unreachable
+* Connected to apitest.cybersource.com (66.185.182.49) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*   CAfile: /var/www/html/TESTPG/vendor/cybersource/rest-client-php/lib/ssl/cacert.pem
+  CApath: /etc/ssl/certs
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES256-GCM-SHA384
+* ALPN, server did not agree to a protocol
+* Server certificate:
+*  subject: C=US; ST=California; L=Foster City; jurisdictionC=US; jurisdictionST=Delaware; O=Cybersource Corporation; businessCategory=Private Organization; serialNumber=2838921; CN=apitest.cybersource.com
+*  start date: Jan 21 22:56:56 2022 GMT
+*  expire date: Feb 15 22:56:56 2023 GMT
+*  subjectAltName: host "apitest.cybersource.com" matched cert's "apitest.cybersource.com"
+*  issuer: C=US; O=Entrust, Inc.; OU=See www.entrust.net/legal-terms; OU=(c) 2014 Entrust, Inc. - for authorized use only; CN=Entrust Certification Authority - L1M
+*  SSL certificate verify ok.
+> POST /risk/v1/authentication-setups HTTP/1.1
+Host:apitest.cybersource.com
+User-Agent: Swagger-Codegen/1.0.0/php
+Accept: application/hal+json;charset=utf-8
+Content-Type: application/json
+v-c-merchant-id:ni_002200006765_usd
+Signature:keyid="1600d251-d472-4213-9c12-5fc3680fb9df", algorithm="HmacSHA256", headers="host date (request-target) digest v-c-merchant-id", signature="hc/VyQ6iurCFHz4ofMdv03CMFFY5AoMN/X9WfFR+coM="
+Date:Mon, 08 Aug 2022 9:28:31 GMT
+Digest: SHA-256=b6lHGhaNuAkVPaG4d3vYZVybfUaq1ZUeHkoLhxnFRIU=
+Content-Length: 239
+
+* upload completely sent off: 239 out of 239 bytes
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 201 Created
+< Cache-Control: no-cache, no-store, must-revalidate
+< Pragma: no-cache
+< Expires: -1
+< Strict-Transport-Security: max-age=31536000
+< Content-Type: application/hal+json
+< Content-Length: 830
+< x-response-time: 141ms
+< X-OPNET-Transaction-Trace: 240054d2-fb62-42fe-a4a2-186c1980db34
+< Connection: keep-alive
+< v-c-correlation-id: 5d6717ac-72b2-4863-9448-05477348f09d
+< 
+* Connection #0 to host apitest.cybersource.com left intact

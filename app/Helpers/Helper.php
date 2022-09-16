@@ -5,7 +5,7 @@ namespace App\Helpers;
 class Helper
 {
     public static function sign ($params) {
-        return self::signData(self::buildDataToSign($params), SECRET_KEY_3DS);
+        return self::signData(self::buildDataToSign($params), '44e5fef0-d480-42f2-9211-86c3688642ef');
     }
     public static function signData($data, $secretKey) {
         return base64_encode(hash_hmac(HMAC_SHA256, $data, $secretKey, true));
@@ -24,9 +24,9 @@ class Helper
     }
     public static function CreateApiToken()
     {
-        $data = "merchant.TEST120800000022:067b275c4037865b6c19afd47e50cf73";
+        $data = "merchant.200190700101:d12bbccc53d0f25b9aea69abf05c44a3";
         return base64_encode($data);
     }
-    
+
 
 }

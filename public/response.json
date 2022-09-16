@@ -1,0 +1,254 @@
+{"merchant":"200190700102","session":{"id":"SESSION0002758570392G9463217I51","updateStatus":"SUCCESS","version":"b9b2336702"},"sourceOfFunds":{"provided":{"card":{"brand":"MASTERCARD","expiry":{"month":"1","year":"39"},"fundingMethod":"CREDIT","nameOnCard":"Sarath","number":"222300xxxxxx0007","scheme":"MASTERCARD","securityCode":"xxx"}}},"version":"63"}
+
+{
+    "response": {
+        "authentication": {
+            "3ds1": {
+                "veResEnrolled": "Y"
+            },
+            "acceptVersions": "3DS1,3DS2",
+            "channel": "PAYER_BROWSER",
+            "purpose": "PAYMENT_TRANSACTION",
+            "redirect": {
+                "customized": {
+                    "3DS": {
+                        "methodPostData": "e30=",
+                        "methodUrl": "https://mtf.gateway.mastercard.com/acs/mastercard/v2/empty"
+                    }
+                }
+            },
+            "redirectHtml": "<script id=\"initiate-authentication-script\"></script>",
+            "version": "3DS1"
+        },
+        "correlationId": "test",
+        "merchant": "200190700102",
+        "order": {
+            "authenticationStatus": "AUTHENTICATION_AVAILABLE",
+            "creationTime": "2022-09-16T09:30:55.478Z",
+            "currency": "AED",
+            "id": "AMJORD1663320396",
+            "lastUpdatedTime": "2022-09-16T09:30:55.454Z",
+            "merchantCategoryCode": "5411",
+            "status": "AUTHENTICATION_INITIATED",
+            "totalAuthorizedAmount": 0,
+            "totalCapturedAmount": 0,
+            "totalRefundedAmount": 0
+        },
+        "response": {
+            "gatewayCode": "AUTHENTICATION_IN_PROGRESS",
+            "gatewayRecommendation": "PROCEED"
+        },
+        "result": "SUCCESS",
+        "sourceOfFunds": {
+            "provided": {
+                "card": {
+                    "brand": "MASTERCARD",
+                    "fundingMethod": "CREDIT",
+                    "number": "222300xxxxxx0007",
+                    "scheme": "MASTERCARD"
+                }
+            },
+            "type": "CARD"
+        },
+        "timeOfLastUpdate": "2022-09-16T09:30:55.454Z",
+        "timeOfRecord": "2022-09-16T09:30:55.478Z",
+        "transaction": {
+            "amount": 0,
+            "authenticationStatus": "AUTHENTICATION_AVAILABLE",
+            "currency": "AED",
+            "id": "AMJTXN1663320396",
+            "type": "AUTHENTICATION"
+        },
+        "version": "63"
+    },
+    "transaction_id": "AMJTXN1663320396",
+    "order_id": "AMJORD1663320396",
+    "session_id": "SESSION0002758570392G9463217I51",
+    "url": "http://127.0.0.1:8000/mpgs/payment/PHNjcmlwdCBpZD0iaW5pdGlhdGUtYXV0aGVudGljYXRpb24tc2NyaXB0Ij48L3NjcmlwdD4=",
+    "next_url": "http://127.0.0.1:8000/api/MPGS/3ds/payer_authentication/AMJORD1663320396/AMJTXN1663320396",
+    "payment_request_url": "http://127.0.0.1:8000/api/MPGS/3ds/pay_request/AMJORD1663320396/AMJTXN1663320396/SESSION0002758570392G9463217I51"
+}
+
+
+{
+    "response": {
+        "authentication": {
+            "3ds1": {
+                "veResEnrolled": "Y"
+            },
+            "payerInteraction": "REQUIRED",
+            "redirect": {
+                "domainName": "mtf.gateway.mastercard.com"
+            },
+            "redirectHtml": "<div id=\"redirectTo3ds1AcsSimple\" xmlns=\"http://www.w3.org/1999/html\"> <iframe id=\"redirectTo3ds1Frame\" name=\"redirectTo3ds1Frame\" height=\"100%\" width=\"100%\" > </iframe> <form id =\"redirectTo3ds1Form\" method=\"POST\" action=\"https://mtf.gateway.mastercard.com/acs/MastercardACS/ef15f893-7efb-4e0b-a01c-b396698ca802\" target=\"redirectTo3ds1Frame\"> <input type=\"hidden\" name=\"PaReq\" value=\"eAFVUV1vgkAQfDfxPxBeG7njFBGznLGiqU01pmLsK4GNkAgoH639991DqC0PF2b2dm52Fma39Kx9YlEmeebqpsF1DbMwj5Ls5OoHfzWY6DPZ74EfF4jeHsO6QAkbLMvghFoSuboYOty0haNL2M3f8SqhlZOkZghgHaSuIoyDrJIQhNfn9VZaYuTYFrAWQorF2pOCc9PhNp2cuu8cZEGK0l/u/c3a22+XR6o0FIR5nVXFt7QnI2AdgLo4y7iqLuWUsQrLapAmUWkECExVgD2s7GplqqShbkkkn9gitnLLOtZXc5x/lF/++e3V2q7QO7jA1A2IggrJoxDcMccad6ZDPrVoiIaHIFV+5HzpaSbnBuc03Z2Ci3ppfgdUU6W/FFC0BWXfjdIhwNslz5BEaebff2AP44sXlWhYqeyEGCrp9rNVtk1BqSQUk1pWI6MAMNXK2rVRKM1Wifm37X7vB12wrv0=\" /> <input type=\"hidden\" name=\"TermUrl\" value=\"https://mtf.gateway.mastercard.com/callbackInterface/gateway/941aa874e3384c1e3ee5a7bc830bedff6c17b5a52b4f600a30f68b3362ba8919\" /> <input type=\"hidden\" name=\"MD\" value=\"\" /> </form> <script id=\"authenticate-payer-script\"> var e=document.getElementById(\"redirectTo3ds1Form\"); if (e) { e.submit(); if (e.parentNode !== null) { e.parentNode.removeChild(e); } } </script> </div>",
+            "version": "3DS1"
+        },
+        "correlationId": "test",
+        "device": {
+            "browser": "MOZILLA",
+            "ipAddress": "127.0.0.1"
+        },
+        "merchant": "200190700102",
+        "order": {
+            "amount": 100,
+            "authenticationStatus": "AUTHENTICATION_PENDING",
+            "creationTime": "2022-09-16T09:30:55.478Z",
+            "currency": "AED",
+            "id": "AMJORD1663320396",
+            "lastUpdatedTime": "2022-09-16T09:32:01.293Z",
+            "merchantCategoryCode": "5411",
+            "status": "AUTHENTICATION_INITIATED",
+            "totalAuthorizedAmount": 0,
+            "totalCapturedAmount": 0,
+            "totalRefundedAmount": 0,
+            "valueTransfer": {
+                "accountType": "NOT_A_TRANSFER"
+            }
+        },
+        "response": {
+            "gatewayCode": "PENDING",
+            "gatewayRecommendation": "PROCEED"
+        },
+        "result": "PENDING",
+        "sourceOfFunds": {
+            "provided": {
+                "card": {
+                    "brand": "MASTERCARD",
+                    "expiry": {
+                        "month": "1",
+                        "year": "39"
+                    },
+                    "fundingMethod": "CREDIT",
+                    "nameOnCard": "Sarath",
+                    "number": "222300xxxxxx0007",
+                    "scheme": "MASTERCARD"
+                }
+            },
+            "type": "CARD"
+        },
+        "timeOfLastUpdate": "2022-09-16T09:32:01.293Z",
+        "timeOfRecord": "2022-09-16T09:30:55.478Z",
+        "transaction": {
+            "acquirer": {
+                "merchantId": "200190700102"
+            },
+            "amount": 100,
+            "authenticationStatus": "AUTHENTICATION_PENDING",
+            "currency": "AED",
+            "id": "AMJTXN1663320396",
+            "type": "AUTHENTICATION"
+        },
+        "version": "63"
+    },
+    "transaction_id": "AMJTXN1663320396",
+    "order_id": "AMJORD1663320396",
+    "url": "http://127.0.0.1:8000/mpgs/payment/PGRpdiBpZD0icmVkaXJlY3RUbzNkczFBY3NTaW1wbGUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L2h0bWwiPiA8aWZyYW1lIGlkPSJyZWRpcmVjdFRvM2RzMUZyYW1lIiBuYW1lPSJyZWRpcmVjdFRvM2RzMUZyYW1lIiBoZWlnaHQ9IjEwMCUiIHdpZHRoPSIxMDAlIiA+IDwvaWZyYW1lPiA8Zm9ybSBpZCA9InJlZGlyZWN0VG8zZHMxRm9ybSIgbWV0aG9kPSJQT1NUIiBhY3Rpb249Imh0dHBzOi8vbXRmLmdhdGV3YXkubWFzdGVyY2FyZC5jb20vYWNzL01hc3RlcmNhcmRBQ1MvZWYxNWY4OTMtN2VmYi00ZTBiLWEwMWMtYjM5NjY5OGNhODAyIiB0YXJnZXQ9InJlZGlyZWN0VG8zZHMxRnJhbWUiPiA8aW5wdXQgdHlwZT0iaGlkZGVuIiBuYW1lPSJQYVJlcSIgdmFsdWU9ImVBRlZVVjF2Z2tBUWZEZnhQeEJlRzduakZCR3puTEdpcVUwMXBtTHNLNEdOa0Fnb0g2Mzk5OTFEcUMwUEYyYjJkbTUyRm1hMzlLeDlZbEVtZWVicXBzRjFEYk13ajVMczVPb0hmeldZNkRQWjc0RWZGNGplSHNPNlFBa2JMTXZnaEZvU3Vib1lPdHkwaGFOTDJNM2Y4U3FobFpPa1pnaGdIYVN1SW95RHJKSVFoTmZuOVZaYVl1VFlGckFXUW9yRjJwT0NjOVBoTnAyY3V1OGNaRUdLMGwvdS9jM2EyMitYUjZvMEZJUjVuVlhGdDdRbkkyQWRnTG80eTdpcUx1V1VzUXJMYXBBbVVXa0VDRXhWZ0QyczdHcGxxcVNoYmtra245Z2l0bkxMT3RaWGM1eC9sRi8rK2UzVjJxN1FPN2pBMUEySWdnckpveERjTWNjYWQ2WkRQclZvaUlhSElGVis1SHpwYVNibkJ1YzAzWjJDaTNwcGZnZFVVNlcvRkZDMEJXWGZqZElod05zbHo1QkVhZWJmZjJBUDQ0c1hsV2hZcWV5RUdDcnA5ck5WdGsxQnFTUVVrMXBXSTZNQU1OWEsyclZSS00xV2lmbTM3WDd2QjEyd3J2MD0iIC8+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9IlRlcm1VcmwiIHZhbHVlPSJodHRwczovL210Zi5nYXRld2F5Lm1hc3RlcmNhcmQuY29tL2NhbGxiYWNrSW50ZXJmYWNlL2dhdGV3YXkvOTQxYWE4NzRlMzM4NGMxZTNlZTVhN2JjODMwYmVkZmY2YzE3YjVhNTJiNGY2MDBhMzBmNjhiMzM2MmJhODkxOSIgLz4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0iTUQiIHZhbHVlPSIiIC8+IDwvZm9ybT4gPHNjcmlwdCBpZD0iYXV0aGVudGljYXRlLXBheWVyLXNjcmlwdCI+IHZhciBlPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJyZWRpcmVjdFRvM2RzMUZvcm0iKTsgaWYgKGUpIHsgZS5zdWJtaXQoKTsgaWYgKGUucGFyZW50Tm9kZSAhPT0gbnVsbCkgeyBlLnBhcmVudE5vZGUucmVtb3ZlQ2hpbGQoZSk7IH0gfSA8L3NjcmlwdD4gPC9kaXY+",
+    "next_url": "http://127.0.0.1:8000/api/MPGS/3ds/payer_authentication/AMJORD1663320396/AMJTXN1663320396",
+    "payment_request_url": "http://127.0.0.1:8000/api/MPGS/3ds/pay_request/AMJORD1663320396/AMJTXN1663320396/SESSION0002758570392G9463217I51"
+}
+
+
+{
+    "authentication": {
+        "3ds": {
+            "acsEci": "02",
+            "authenticationToken": "jHyn+7YFi1EUAREAAAAvNUe6Hv8=",
+            "transactionId": "+/Ch5o55Wuq16oXswTlLJ5NFeDU="
+        },
+        "3ds1": {
+            "paResStatus": "Y",
+            "veResEnrolled": "Y"
+        },
+        "transactionId": "AMJTXN1663320396",
+        "version": "3DS1"
+    },
+    "authorizationResponse": {
+        "cardSecurityCodeError": "P",
+        "commercialCardIndicator": "3",
+        "date": "0916",
+        "financialNetworkDate": "2022-09-16",
+        "posData": "1025100006600",
+        "posEntryMode": "812",
+        "processingCode": "003000",
+        "responseCode": "14",
+        "stan": "191167",
+        "time": "093337"
+    },
+    "device": {
+        "browser": "MOZILLA",
+        "ipAddress": "127.0.0.1"
+    },
+    "gatewayEntryPoint": "WEB_SERVICES_API",
+    "merchant": "200190700102",
+    "order": {
+        "amount": 100,
+        "authenticationStatus": "AUTHENTICATION_SUCCESSFUL",
+        "chargeback": {
+            "amount": 0,
+            "currency": "AED"
+        },
+        "creationTime": "2022-09-16T09:30:55.447Z",
+        "currency": "AED",
+        "id": "AMJORD1663320396",
+        "lastUpdatedTime": "2022-09-16T09:33:37.668Z",
+        "merchantAmount": 100,
+        "merchantCategoryCode": "5411",
+        "merchantCurrency": "AED",
+        "reference": "AMJORD1663320396",
+        "status": "FAILED",
+        "totalAuthorizedAmount": 0,
+        "totalCapturedAmount": 0,
+        "totalDisbursedAmount": 0,
+        "totalRefundedAmount": 0
+    },
+    "response": {
+        "acquirerCode": "14",
+        "acquirerMessage": "Invalid card number",
+        "cardSecurityCode": {
+            "acquirerCode": "P",
+            "gatewayCode": "NOT_PROCESSED"
+        },
+        "gatewayCode": "DECLINED"
+    },
+    "result": "FAILURE",
+    "sourceOfFunds": {
+        "provided": {
+            "card": {
+                "brand": "MASTERCARD",
+                "expiry": {
+                    "month": "1",
+                    "year": "39"
+                },
+                "fundingMethod": "CREDIT",
+                "nameOnCard": "Sarath",
+                "number": "222300xxxxxx0007",
+                "scheme": "MASTERCARD",
+                "storedOnFile": "NOT_STORED"
+            }
+        },
+        "type": "CARD"
+    },
+    "timeOfLastUpdate": "2022-09-16T09:33:37.668Z",
+    "timeOfRecord": "2022-09-16T09:33:37.552Z",
+    "transaction": {
+        "acquirer": {
+            "batch": 20220916,
+            "date": "0916",
+            "id": "NETWORK2_S2I",
+            "merchantId": "200190700102",
+            "settlementDate": "2022-09-16",
+            "timeZone": "+0400"
+        },
+        "amount": 100,
+        "authenticationStatus": "AUTHENTICATION_SUCCESSFUL",
+        "currency": "AED",
+        "id": "1663320558",
+        "receipt": "225909191167",
+        "reference": "AMJORD1663320396",
+        "source": "INTERNET",
+        "stan": "191167",
+        "terminal": "2XY0235",
+        "type": "PAYMENT"
+    },
+    "version": "63"
+}

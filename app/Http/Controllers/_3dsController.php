@@ -6,6 +6,7 @@ use CyberSource\ExternalConfiguration;
 use Illuminate\Http\Request;
 use CyberSource;
 use Helper;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 
 class _3dsController extends Controller
@@ -88,6 +89,51 @@ class _3dsController extends Controller
         $signature     =  Helper::sign($signing_input);
         $JWT = $signing_input.".".$signature;
 
+        // $response = Http::withOptions([
+        //     'debug' => true,
+        // ])->post('https://centinelapistag.cardinalcommerce.com/V1/Cruise/Collect', [
+        //     'JWT' => $JWT
+        // ]);
+
+        //dd($JWT);
+        $client = new \GuzzleHttp\Client();
+        $response = $client->request('POST', 'https://centinelapistag.cardinalcommerce.com/V1/Cruise/Collect', [
+            'form_params' => [
+                'JWT' => $JWT,
+            ]
+        ]);
+        dd($response);
+
+    }
+    public function DeviceDataCollectionOutSide(Request $request,$org_id,$api_key,$secret)
+    {
+        //dd($org_id);
+
+        //Config::set('cybersource-profiles.SECRET_KEY_3DS', $secret);
+        $currentTime = time();
+        $expireTime = 3600; // expiration in seconds - this equals 1hr
+        $orderDetails = array(
+            "OrderDetails" => array(
+                "OrderNumber" =>  time()
+            )
+        );
+        $token = array();
+        $token['jti'] = uniqid();
+        $token['iss'] = $api_key;  // API Key Identifier
+        $token['iat'] = $currentTime; // JWT Issued At Time
+        $token['exp'] = $currentTime + $expireTime; // JWT Expiration Time
+        $token['OrgUnitId'] = $org_id; // Merchant's OrgUnit
+        $token['Payload'] = $orderDetails;
+        $token['ReferenceId'] = $request->ReferenceId;
+        $token['ReturnUrl'] = $request->ReturnUrl;
+        $token['ObjectifyPayload'] = true;
+        $header 	= array('typ' => 'JWT', 'alg' => 'HS256');
+        $segments[] = base64_encode(json_encode($header));
+        $segments[] = base64_encode(json_encode($token));
+        $signing_input = implode('.', $segments);
+        $signature     =  Helper::sign($signing_input);
+        $JWT = $signing_input.".".$signature;
+        //dd($token);
         // $response = Http::withOptions([
         //     'debug' => true,
         // ])->post('https://centinelapistag.cardinalcommerce.com/V1/Cruise/Collect', [

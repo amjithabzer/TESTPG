@@ -31,6 +31,8 @@ Route::prefix('3ds')->group(function () {
     Route::post('/check_entrollement', [_3dsController::class,'CheckEntrollement'])->name('check_entrollement');
     Route::post('/authenticating_enrolled_cards', [_3dsController::class,'AuthenticatingEnrolledCards'])->name('authenticating_enrolled_cards');
     Route::post('/authorization_with_payer_auth_validation', [_3dsController::class,'AuthorizationWithPayerAuthValidation'])->name('authorization_with_payer_auth_validation');
+    //for client mids device data collection
+    Route::post('/device_data_collection_outside/{org_id}/{api_key}/{secret}', [_3dsController::class,'DeviceDataCollectionOutSide'])->name('device_data_collection_outside');
 
 });
 Route::prefix('MPGS')->group(function () {
